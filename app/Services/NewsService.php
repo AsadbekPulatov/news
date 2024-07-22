@@ -13,9 +13,9 @@ class NewsService
         $this->newsReporitory = $newsReporitory;
     }
 
-    public function getAll()
+    public function getAll($params)
     {
-        return $this->newsReporitory->getAll();
+        return $this->newsReporitory->getAll($params);
     }
 
     public function getById($id)

@@ -13,9 +13,9 @@ class CategoryService
         $this->categoryReporitory = $categoryReporitory;
     }
 
-    public function getAll()
+    public function getAll($params)
     {
-        return $this->categoryReporitory->getAll();
+        return $this->categoryReporitory->getAll($params);
     }
 
     public function getById($id)

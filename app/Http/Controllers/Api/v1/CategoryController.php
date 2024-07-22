@@ -20,9 +20,9 @@ class CategoryController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return $this->categoryService->getAll();
+        return $this->categoryService->getAll($request->all());
     }
 
     /**

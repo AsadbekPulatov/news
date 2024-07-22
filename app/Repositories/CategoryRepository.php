@@ -14,9 +14,9 @@ class CategoryRepository
         $this->category = $category;
     }
 
-    public function getAll()
+    public function getAll($params)
     {
-        return $this->category->get();
+        return $this->category->filter($params)->get();
     }
 
     public function getById($id)
