@@ -14,7 +14,6 @@ class CategoryRepository
         $this->category = $category;
     }
 
-
     public function getAll()
     {
         return $this->category->get();
@@ -32,12 +31,10 @@ class CategoryRepository
         return $this->category->create($data);
     }
 
-
     public function update($data, $id)
     {
         return $this->category->find($id)->update($data);
     }
-
 
     public function delete($id)
     {

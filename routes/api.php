@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\v1\CategoryController;
+use App\Http\Controllers\Api\v1\NewsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,4 +27,5 @@ Route::get('logout', [AuthController::class, 'logout'])->middleware('auth:sanctu
 
 Route::group(['middleware' => 'auth:sanctum', 'prefix'=>'v1'], function () {
     Route::apiResource('categories', CategoryController::class);
+    Route::apiResource('news', NewsController::class);
 });
