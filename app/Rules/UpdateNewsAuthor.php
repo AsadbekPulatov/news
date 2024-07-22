@@ -17,6 +17,6 @@ class UpdateNewsAuthor implements ValidationRule
     {
         $news = News::find($value);
         if ($news->author != auth()->id())
-            $fail("This news not updated");
+            $fail("The operation is not possible.");
     }
 }
