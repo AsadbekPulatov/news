@@ -14,7 +14,7 @@ class AuthService
             $user['user'] = $auth;
             return $user;
         } else {
-            $res['data'] = [
+            $res = [
                 "error" => "unauthorized",
                 "message" => "email or password invalid"
             ];
