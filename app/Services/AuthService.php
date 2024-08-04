@@ -14,10 +14,10 @@ class AuthService
             $user['user'] = $auth;
             return $user;
         } else {
-            $res = [
-                'message' => "Email or password invalid",
+            $res['data'] = [
+                "error" => "unauthorized",
+                "message" => "email or password invalid"
             ];
-            $res['data'] = ["error" => "unauthorized"];
             return response()->json($res, 401);
         }
 
