@@ -12,10 +12,13 @@ class AuthService
             $auth = Auth::user();
             $user['token'] = $auth->createToken('AuthToken')->plainTextToken;
             $user['user'] = $auth;
-
             return $user;
         } else {
-            return "unauthorized";
+            $res = [
+                'message' => "Email or password invalid",
+            ];
+            $res['data'] = ["error" => "unauthorized"];
+            return response()->json($res, 401);
         }
 
     }
