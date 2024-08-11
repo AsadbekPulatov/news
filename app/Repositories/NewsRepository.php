@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Http\Resources\NewsResource;
 use App\Models\News;
 use App\Services\UploadFile;
 
@@ -16,7 +17,8 @@ class NewsRepository
 
     public function getAll($params)
     {
-        return $this->news->with('author', 'category')->filter($params)->get();
+        $news = $this->news->with('author', 'category')->filter($params)->get();
+        return NewsResource::collection($news);
     }
 
     public function getById($id)
