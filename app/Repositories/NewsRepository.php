@@ -18,7 +18,7 @@ class NewsRepository
     public function getAll($params)
     {
         $news = $this->news->with('author', 'category')->filter($params)->get();
-        return NewsResource::collection($news);
+        return $news;
     }
 
     public function getById($id)
