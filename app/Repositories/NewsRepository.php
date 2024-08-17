@@ -17,13 +17,14 @@ class NewsRepository
 
     public function getAll($params)
     {
-        $news = $this->news->with('author', 'category')->filter($params)->get();
+        $news = $this->news->orderby('created_at', 'DESC')->with('author', 'category')->filter($params)->get();
         return $news;
     }
 
     public function getById($id)
     {
         return $this->news
+	->with('author', 'category')
             ->where('id', $id)
             ->get();
     }
