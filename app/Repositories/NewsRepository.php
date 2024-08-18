@@ -49,6 +49,9 @@ class NewsRepository
 
     public function delete($id)
     {
-        return $this->news->find($id)->delete();
+        $old = $this->news->find($id);
+        if (isset($old['img']))
+            UploadFile::deleteFile($old['img']);
+        return $old->delete();
     }
 }
